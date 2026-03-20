@@ -1,0 +1,18 @@
+section{
+    width: 90%;
+    place-self: center;
+    height: 80vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width:1280px){
+    section {
+        width: 100%;
+    }
+    :host {
+        display: flex;
+        flex: 1;
+    }
+}

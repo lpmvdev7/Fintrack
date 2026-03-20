@@ -1,0 +1,8 @@
+*{
+    font-family: var(--font-family);
+    color: var(--fintrackblue);
+}
+
+p{
+    font-size: 60px;
+}

@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+@media(min-width:1280px){
+    main {
+        place-self: center;
+        width: 90%;
+        flex-direction: row;
+        align-items: stretch;
+    }
+}

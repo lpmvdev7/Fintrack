@@ -1,0 +1,82 @@
+*{
+    font-family: var(--font-family);
+}
+
+dialog{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fintrackblue);
+    width: 290px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    place-self: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p{
+    color: white;
+    font-size: var(--font-phone-size);
+}
+
+header button{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 100px;
+    border: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input{
+    padding: 0;
+    height: 40px;
+    width: 100%;
+    font-size: var(--font-phone-size);
+    color: var(--fintrackgray);
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+form button{
+    height: 40px;
+    width: 100%;
+    background-color: var(--btn);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: var(--font-phone-size);
+}
+
+@media(min-width:744px){
+    dialog{
+        width: 465px;
+    }
+    header p{
+        font-size: var(--font-tablet-size);
+    }
+    header button{
+        width: 60px;
+        height: 60px;
+    }
+    form input{
+        font-size: var(--font-tablet-size);
+        height: 60px;
+    }
+    form button{
+        font-size: var(--font-tablet-size);
+        height: 60px;
+    }
+}

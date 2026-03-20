@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap');
+
+:root{
+    /* Colors */
+    --fintrackblue: #6A9EEB;
+    --fintrackgray: #B2B2B2;
+    --btn: #A7C7F5;
+
+    /* Fonts */
+    --font-family: "Jersey 10", sans-serif;
+    --font-phone-size: 20px;
+    --font-tablet-size: 30px
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
