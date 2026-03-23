@@ -10,4 +10,11 @@ import { Total } from "./total/total.component";
   templateUrl: './section.component.html',
   styleUrl: './section.component.css',
 })
-export class Section {}
+export class Section {
+
+  isBotonAddPressed = false
+
+  onTouchBotonAdd(botonValue:boolean){
+    this.isBotonAddPressed = true
+  }
+}

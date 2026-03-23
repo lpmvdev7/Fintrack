@@ -10,6 +10,9 @@ img{
     height: 100%;
 }
 
+button:hover{
+    cursor: pointer;
+}
 
 @media(min-width:744px){
     button{
