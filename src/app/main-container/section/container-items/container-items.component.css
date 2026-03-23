@@ -9,10 +9,18 @@ section{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 70vh;
+    overflow: auto;
+
 }
 
-/* @media(min-width: 1280px){
+section::-webkit-scrollbar{
+  width: 10px;
+}
+
+@media(min-width: 1280px){
     section{
-        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
     }
-} */
+}

@@ -9,7 +9,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class MenuItem {
   @Input({required:true}) categoria!:string
   @Input({required: true}) imageUrl!:string
+  // @Input({required: true}) imageUrlActive!: string
   @Input({required: true}) itemId!: string
+  // @Input() isActive: boolean = false
 
   @Output() itemClickedEmmiter = new EventEmitter<string>()
 

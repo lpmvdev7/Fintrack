@@ -47,7 +47,7 @@
         gap: 100px;
     }
     :host {
-    display: flex;
-    width: 30%;
-}
+        display: flex;
+        width: 10%;
+    }
 }

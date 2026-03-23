@@ -1,14 +1,29 @@
 *{
     font-family: var(--font-family);
 }
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .backdrop {
   background-color: #6a9eeba8;
+  backdrop-filter: blur(20px);
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: 100;
+  animation: aparecer 0.4s ease-out forwards;
 }
 dialog{
     display: flex;
@@ -38,6 +53,7 @@ header button{
     background-color: white;
     border-radius: 100px;
     border: none;
+    font-size: 20px;
 }
 
 form{
@@ -56,6 +72,16 @@ form input{
     border: none;
     outline: none;
     text-align: center;
+}
+
+textarea{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  height: 200px;
 }
 
 form button{
@@ -79,6 +105,7 @@ form button{
     header button{
         width: 60px;
         height: 60px;
+        font-size: 30px;
     }
     form input{
         font-size: var(--font-tablet-size);

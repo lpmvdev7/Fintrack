@@ -11,9 +11,11 @@ export class Menu {
 
   @Output() itemSelected = new EventEmitter<string>()
 
+  // activeItemId: string = ''
 
   onItemClickedEmmiter(cadena:string){
     console.log(cadena)
+    // this.activeItemId = cadena
     this.itemSelected.emit(cadena)
   }
 }

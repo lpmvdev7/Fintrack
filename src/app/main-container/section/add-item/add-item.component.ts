@@ -15,6 +15,8 @@ export class AddItem {
   
   nombreFuenteIngreso = ""
   cantidad = 0
+  fecha = ""
+  descripcion = ""
 
   @Output() close = new EventEmitter<void>()
 
@@ -24,7 +26,7 @@ export class AddItem {
 
   // Metodo que se activa al enviar el formulario
   onSubmit(){
-    ingresos.push({nombre: this.nombreFuenteIngreso, cantidad: this.cantidad})
+    ingresos.push({nombre: this.nombreFuenteIngreso, cantidad: this.cantidad, fecha: this.fecha, descripcion: this.descripcion})
     console.log(ingresos)
     this.close.emit()
   }
