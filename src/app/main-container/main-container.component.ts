@@ -9,4 +9,11 @@ import { Section } from "./section/section.component";
   templateUrl: './main-container.component.html',
   styleUrl: './main-container.component.css',
 })
-export class MainContainer {}
+export class MainContainer {
+
+  cadenaValue = ""
+  onMenuSelected(cadena:string){
+    console.log("MainContainer recibe: ", cadena)
+    this.cadenaValue = cadena
+  }
+}

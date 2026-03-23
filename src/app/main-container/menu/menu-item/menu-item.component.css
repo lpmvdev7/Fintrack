@@ -19,6 +19,9 @@
     font-size: var(--font-phone-size);
     color: var(--fintrackgray);
 }
+.menuItem:hover{
+    cursor: pointer;
+}
 
 @media(min-width:744px){
     .menuItem img{

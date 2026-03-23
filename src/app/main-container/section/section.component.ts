@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BotonAdd } from "./boton-add/boton-add.component";
 import { AddItem } from "./add-item/add-item.component";
 import { ContainerItems } from "./container-items/container-items.component";
 import { Total } from "./total/total.component";
+import { ingresos } from '../../ingresos';
 
 @Component({
   selector: 'app-section',
@@ -12,6 +13,10 @@ import { Total } from "./total/total.component";
 })
 export class Section {
 
+  @Input() itemSelected = ""
+
+  arrayIngresos = ingresos
+  
   isBotonAddPressed = false
 
   onTouchBotonAdd(botonValue:boolean){

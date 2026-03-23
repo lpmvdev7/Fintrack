@@ -2,6 +2,7 @@
     display: block;
     width: 100%;
     place-self: start;
+    height: 70vh;
 }
 section{
     width: 100%;
@@ -10,8 +11,8 @@ section{
     gap: 10px;
 }
 
-@media(min-width: 1280px){
+/* @media(min-width: 1280px){
     section{
         width: 80%;
     }
-}
+} */

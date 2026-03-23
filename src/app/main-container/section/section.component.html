@@ -1,18 +1,19 @@
 <section>
     <!-- Aqui ira botonAdd -->
 
-    @if (isBotonAddPressed) {
-        <app-add-item (close)="onCloseAddItem()"></app-add-item>
+    @if (isBotonAddPressed && itemSelected === "Ingresos") {
+        <app-add-item itemCategoria="Nuevo Ingreso" (close)="onCloseAddItem()"></app-add-item>
+    }@else if (isBotonAddPressed && itemSelected === "Gastos") {
+        <app-add-item itemCategoria="Nuevo Gasto" (close)="onCloseAddItem()"></app-add-item>
     }
 
-     <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+    @if (arrayIngresos.length === 0) {
+        <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>    
+    }@else {
+        <!-- Componente contenedor de los items -->
+        <app-container-items></app-container-items>
+        <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+    }
 
-     <!-- Boton para agregar un item -->
-     <!-- <app-add-item></app-add-item> -->
-
-     <!-- Componente contendeor de los items -->
-     <!-- <app-container-items></app-container-items> -->
-
-    <!-- Componente que muestra el total -->
     <!-- <app-total></app-total> -->
 </section>

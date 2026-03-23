@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
@@ -9,4 +9,11 @@ import { Component, Input } from '@angular/core';
 export class MenuItem {
   @Input({required:true}) categoria!:string
   @Input({required: true}) imageUrl!:string
+  @Input({required: true}) itemId!: string
+
+  @Output() itemClickedEmmiter = new EventEmitter<string>()
+
+  onItemClicked(){
+    this.itemClickedEmmiter.emit(this.itemId)
+  }
 }

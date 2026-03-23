@@ -1,17 +1,19 @@
+<div class="backdrop">
 <dialog open="">
     <header>
-        <p>Nuevo ingreso</p>
+        <p>{{itemCategoria}}</p>
         <button (click)="onCloseAddItem()">X</button>
     </header>
-    <form action="">
+    <form action="" (ngSubmit)="onSubmit()">
         <div>
             <label for="Nombre"></label>
-            <input type="text" id="Nombre" placeholder="Nombre">
+            <input type="text" id="Nombre" placeholder="Nombre" name="nombre" [(ngModel)]="nombreFuenteIngreso">
         </div>
         <div>
             <label for="Cantidad"></label>
-            <input type="number" id="Cantidad" placeholder="Cantidad">
+            <input type="number" id="Cantidad" placeholder="Cantidad" name="cantidad" [(ngModel)]="cantidad">
         </div>
         <button type="submit">Confirmar</button>
     </form>
 </dialog>
+</div>

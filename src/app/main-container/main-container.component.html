@@ -1,4 +1,12 @@
 <main>
-      <app-menu></app-menu>
-      <app-section></app-section>
+      <app-menu (itemSelected)="onMenuSelected($event)"></app-menu>
+      @if(cadenaValue === "1"){
+            <app-section itemSelected="Ingresos"></app-section>
+      }@else if (cadenaValue === "2") {
+            <app-section itemSelected="Gastos"></app-section>
+      }@else if (cadenaValue === "3") {
+            <app-section itemSelected="Resumen"></app-section>
+      }@else {
+            <app-section itemSelected="Ingresos"></app-section>
+      }
 </main>

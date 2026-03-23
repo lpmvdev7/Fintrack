@@ -1,18 +1,5 @@
 <div class="container-menu">
-    <!-- <div class="menuItem">
-        <img src="ingresos-icon.svg" alt="Ingresos">
-        <span>Ingresos</span>
-    </div>
-    <div class="menuItem">
-        <img src="gastos-icon.svg" alt="Gastos">
-        <span>Gastos</span>
-    </div>
-    <div class="menuItem">
-        <img src="resumen-icon.svg" alt="Resumen">
-        <span>Resumen</span>
-    </div> -->
-    <app-menu-item categoria="Ingresos" imageUrl="ingresos-icon.svg"></app-menu-item>
-    <app-menu-item categoria="Gastos" imageUrl="gastos-icon.svg"></app-menu-item>
-    <app-menu-item categoria="Resumen" imageUrl="resumen-icon.svg"></app-menu-item>
-
+    <app-menu-item categoria="Ingresos" imageUrl="ingresos-icon.svg" itemId="1" (itemClickedEmmiter)="onItemClickedEmmiter($event)"></app-menu-item>
+    <app-menu-item categoria="Gastos" imageUrl="gastos-icon.svg" itemId="2" (itemClickedEmmiter)="onItemClickedEmmiter($event)"></app-menu-item>
+    <app-menu-item categoria="Resumen" imageUrl="resumen-icon.svg" itemId="3" (itemClickedEmmiter)="onItemClickedEmmiter($event)"></app-menu-item>
 </div>
