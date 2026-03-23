@@ -2,7 +2,7 @@
     <!-- Aqui ira botonAdd -->
 
     @if (isBotonAddPressed) {
-        <app-add-item></app-add-item>
+        <app-add-item (close)="onCloseAddItem()"></app-add-item>
     }
 
      <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>

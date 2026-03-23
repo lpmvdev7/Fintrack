@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-item',
@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './add-item.component.html',
   styleUrl: './add-item.component.css',
 })
-export class AddItem {}
+export class AddItem {
+
+  @Output() close = new EventEmitter<void>()
+
+  onCloseAddItem(){
+    this.close.emit()
+  }
+}

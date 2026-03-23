@@ -15,6 +15,11 @@ export class Section {
   isBotonAddPressed = false
 
   onTouchBotonAdd(botonValue:boolean){
-    this.isBotonAddPressed = true
+    this.isBotonAddPressed = botonValue
   }
+
+  onCloseAddItem(){
+    this.isBotonAddPressed = false
+  }
+
 }
