@@ -1,18 +1,9 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-grafico',
-//   imports: [],
-//   templateUrl: './grafico.component.html',
-//   styleUrl: './grafico.component.css',
-// })
-// export class Grafico {}
-
-
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Chart, ArcElement, Tooltip, Legend, DoughnutController } from 'chart.js';
+import { Chart, ArcElement, Tooltip, Legend, PieController } from 'chart.js';
+import { ingresos } from '../../../ingresos';
+import { gastos } from '../../../gastos';
 
-Chart.register(ArcElement, Tooltip, Legend, DoughnutController);
+Chart.register(ArcElement, Tooltip, Legend, PieController);
 
 @Component({
   selector: 'app-grafico',
@@ -22,45 +13,35 @@ Chart.register(ArcElement, Tooltip, Legend, DoughnutController);
   styleUrl: './grafico.component.css',
 })
 export class Grafico implements OnInit {
-  @ViewChild('miGrafico', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('pieChart', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
+
+  labelsData: string[] = []
+  moneyData: string[] = []
 
   ngOnInit() {
+    for (let index = 0; index < ingresos.length; index++) {
+      const element = ingresos[index];
+      this.labelsData.push(element.nombre)
+      this.moneyData.push(element.cantidad)
+    }
+
+    for (let index = 0; index < gastos.length; index++) {
+      const element = gastos[index];
+      this.labelsData.push(element.nombre)
+      this.moneyData.push(element.cantidad)
+    }
+
     new Chart(this.canvasRef.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['Trabajo', 'Cetes', 'Inversiones', 'Escuela'],
+        labels: this.labelsData,
         datasets: [{
-          data: [1500, 1500, 1500, 1500],
-          backgroundColor: [
-            '#2563EB',
-            '#60A5FA',
-            '#BAD6F9',
-            '#9CA3AF',
-          ],
-          borderWidth: 0,
+          backgroundColor: ['#6A9EEB', 'gray', 'rgb(191, 215, 250)', '#a3afc0', '#3677d8'],
+          data: this.moneyData
         }]
       },
       options: {
-        cutout: '65%',
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              padding: 20,
-              usePointStyle: true,
-              pointStyleWidth: 16,
-              generateLabels: (chart) => {
-                const data = chart.data;
-                return data.labels!.map((label, i) => ({
-                  text: "Hola",
-                  fillStyle: (data.datasets[0].backgroundColor as string[])[i],
-                  pointStyle: 'rect',
-                  index: i
-                }));
-              }
-            }
-          }
-        }
+        responsive: true
       }
     });
   }

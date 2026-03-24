@@ -1,4 +1,6 @@
-.contenedor {
-  width: 300px;
-  margin: 0 auto;
+@media(min-width: 1280px){
+  canvas{
+    width: 700px;
+    height: 700px;
+  }
 }
