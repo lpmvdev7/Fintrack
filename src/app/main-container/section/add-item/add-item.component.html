@@ -4,23 +4,23 @@
         <p>{{itemCategoria}}</p>
         <button (click)="onCloseAddItem()">X</button>
     </header>
-    <form action="" (ngSubmit)="onSubmit()">
+    <form action="" (ngSubmit)="onSubmit(form)" #form="ngForm">
         <div>
             <label for="Nombre"></label>
-            <input type="text" id="Nombre" placeholder="Nombre" name="nombre" [(ngModel)]="nombre">
+            <input type="text" id="Nombre" placeholder="Nombre" name="nombre" [(ngModel)]="nombre" required>
         </div>
         <div>
             <label for="Cantidad"></label>
-            <input type="number" id="Cantidad" placeholder="Cantidad" name="cantidad" [(ngModel)]="cantidad">
+            <input type="number" id="Cantidad" placeholder="Cantidad" name="cantidad" [(ngModel)]="cantidad" required>
         </div>
         <div>
           <label for="Fecha"></label>
-          <input type="date" id="Fecha" name="fecha" placeholder="Fecha" [(ngModel)]="fecha">
+          <input type="date" id="Fecha" name="fecha" placeholder="Fecha" [(ngModel)]="fecha" required>
         </div>
 
         <div>
           <label for="descripcion"></label>
-          <textarea name="descripcion" id="descripcion" [(ngModel)]="descripcion"></textarea>
+          <textarea name="descripcion" id="descripcion" [(ngModel)]="descripcion" required></textarea>
         </div>
         <button type="submit">Confirmar</button>
     </form>

@@ -82,6 +82,8 @@ textarea{
   outline: none;
   border-radius: 10px;
   height: 200px;
+  font-size: var(--font-phone-size);
+  color: var(--fintrackgray);
 }
 
 form button{
@@ -114,5 +116,8 @@ form button{
     form button{
         font-size: var(--font-tablet-size);
         height: 60px;
+    }
+    textarea{
+        font-size: var(--font-tablet-size);
     }
 }

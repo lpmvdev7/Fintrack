@@ -3,11 +3,11 @@
     @if(itemSelected === "Ingresos"){
         @for (item of arrayIngresos ; track $index) {
         <!-- <app-item nombre="{item.nombre}" cantidad="{item.cantidad}"></app-item> -->
-        <app-item nombre="{{item.nombre}}" cantidad="{{item.cantidad}}" fecha="{{item.fecha}}" descripcion="{{item.descripcion}}"></app-item>
+        <app-item tipo="ingreso" nombre="{{item.nombre}}" cantidad="{{item.cantidad}}" fecha="{{item.fecha}}" descripcion="{{item.descripcion}}"></app-item>
         }
     }@else {
         @for (item of arrayGastos; track $index){
-            <app-item nombre="{{item.nombre}}" cantidad="{{item.cantidad}}" fecha="{{item.fecha}}" descripcion="{{item.descripcion}}"></app-item>
+            <app-item tipo="gasto" nombre="{{item.nombre}}" cantidad="{{item.cantidad}}" fecha="{{item.fecha}}" descripcion="{{item.descripcion}}"></app-item>
         }
     }
 </section>

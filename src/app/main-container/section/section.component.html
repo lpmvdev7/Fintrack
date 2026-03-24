@@ -6,12 +6,16 @@
         }@else if (arrayIngresos.length !== 0) {
             <app-container-items itemSelected="Ingresos"></app-container-items>
             <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+        }@else if (arrayIngresos.length === 0) {
+            <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>          
         }
     }@else if (itemSelected === "Gastos") {
         @if(isBotonAddPressed){
             <app-add-item itemCategoria="Nuevo Gasto" (close)="onCloseAddItem()"></app-add-item>
         }@else if (arrayGastos.length !== 0) {
             <app-container-items itemSelected="Gastos"></app-container-items>
+            <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+        }@else if (arrayGastos.length === 0) {
             <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
         }
     }@else{

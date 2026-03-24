@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { ingresos } from '../../../ingresos';
 import { gastos } from '../../../gastos';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-add-item',
@@ -26,7 +27,10 @@ export class AddItem {
   }
 
   // Metodo que se activa al enviar el formulario
-  onSubmit(){
+  onSubmit(form:NgForm){
+
+    if(form.invalid) return
+
     if (this.itemCategoria === "Nuevo Ingreso"){
       ingresos.push({nombre: this.nombre, cantidad: this.cantidad, fecha: this.fecha, descripcion: this.descripcion})
     }else if(this.itemCategoria === "Nuevo Gasto"){
