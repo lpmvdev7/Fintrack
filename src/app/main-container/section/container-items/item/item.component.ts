@@ -15,4 +15,6 @@ export class Item {
   // @Input({required: true}) itemId?: number
   @Input({required: true }) nombre ?: string
   @Input({required: true}) cantidad ?: string
+  @Input({required: true}) fecha?: string
+  @Input({required: true}) descripcion?: string
 }

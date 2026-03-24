@@ -4,6 +4,7 @@ import { AddItem } from "./add-item/add-item.component";
 import { ContainerItems } from "./container-items/container-items.component";
 import { Total } from "./total/total.component";
 import { ingresos } from '../../ingresos';
+import { gastos } from '../../gastos';
 
 @Component({
   selector: 'app-section',
@@ -16,6 +17,7 @@ export class Section {
   @Input() itemSelected = ""
 
   arrayIngresos = ingresos
+  arrayGastos = gastos
   
   isBotonAddPressed = false
 

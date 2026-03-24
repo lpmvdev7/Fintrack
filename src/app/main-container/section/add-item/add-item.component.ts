@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ingresos } from '../../../ingresos';
+import { gastos } from '../../../gastos';
 
 @Component({
   selector: 'app-add-item',
@@ -13,8 +14,8 @@ export class AddItem {
 
   @Input({required:true}) itemCategoria ?:string
   
-  nombreFuenteIngreso = ""
-  cantidad = 0
+  nombre = ""
+  cantidad = ""
   fecha = ""
   descripcion = ""
 
@@ -26,8 +27,13 @@ export class AddItem {
 
   // Metodo que se activa al enviar el formulario
   onSubmit(){
-    ingresos.push({nombre: this.nombreFuenteIngreso, cantidad: this.cantidad, fecha: this.fecha, descripcion: this.descripcion})
-    console.log(ingresos)
+    if (this.itemCategoria === "Nuevo Ingreso"){
+      ingresos.push({nombre: this.nombre, cantidad: this.cantidad, fecha: this.fecha, descripcion: this.descripcion})
+    }else if(this.itemCategoria === "Nuevo Gasto"){
+      gastos.push({nombre: this.nombre, cantidad: this.cantidad, fecha: this.fecha, descripcion: this.descripcion})
+    }
+    console.log(...ingresos)
+    console.log(...gastos)
     this.close.emit()
   }
 }

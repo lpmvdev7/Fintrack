@@ -7,7 +7,7 @@
     <form action="" (ngSubmit)="onSubmit()">
         <div>
             <label for="Nombre"></label>
-            <input type="text" id="Nombre" placeholder="Nombre" name="nombre" [(ngModel)]="nombreFuenteIngreso">
+            <input type="text" id="Nombre" placeholder="Nombre" name="nombre" [(ngModel)]="nombre">
         </div>
         <div>
             <label for="Cantidad"></label>
@@ -15,12 +15,12 @@
         </div>
         <div>
           <label for="Fecha"></label>
-          <input type="date" id="Fecha" placeholder="Fecha">
+          <input type="date" id="Fecha" name="fecha" placeholder="Fecha" [(ngModel)]="fecha">
         </div>
 
         <div>
           <label for="descripcion"></label>
-          <textarea name="descripcion" id="descripcion"></textarea>
+          <textarea name="descripcion" id="descripcion" [(ngModel)]="descripcion"></textarea>
         </div>
         <button type="submit">Confirmar</button>
     </form>

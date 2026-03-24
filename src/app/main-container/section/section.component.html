@@ -1,19 +1,21 @@
 <section>
-    <!-- Aqui ira botonAdd -->
-
-    @if (isBotonAddPressed && itemSelected === "Ingresos") {
-        <app-add-item itemCategoria="Nuevo Ingreso" (close)="onCloseAddItem()"></app-add-item>
-    }@else if (isBotonAddPressed && itemSelected === "Gastos") {
-        <app-add-item itemCategoria="Nuevo Gasto" (close)="onCloseAddItem()"></app-add-item>
+    @if (itemSelected === "Ingresos") {
+        @if (isBotonAddPressed) {
+            <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+            <app-add-item itemCategoria="Nuevo Ingreso" (close)="onCloseAddItem()"></app-add-item>
+        }@else if (arrayIngresos.length !== 0) {
+            <app-container-items itemSelected="Ingresos"></app-container-items>
+            <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+        }
+    }@else if (itemSelected === "Gastos") {
+        @if(isBotonAddPressed){
+            <app-add-item itemCategoria="Nuevo Gasto" (close)="onCloseAddItem()"></app-add-item>
+        }@else if (arrayGastos.length !== 0) {
+            <app-container-items itemSelected="Gastos"></app-container-items>
+            <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
+        }
+    }@else{
+        <p>Pagina de resumen</p>
+        <!-- Aqui colocaremos el componente de grafico -->
     }
-
-    @if (arrayIngresos.length === 0) {
-        <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>    
-    }@else {
-        <!-- Componente contenedor de los items -->
-        <app-container-items></app-container-items>
-        <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
-    }
-
-    <!-- <app-total></app-total> -->
 </section>
