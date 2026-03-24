@@ -19,7 +19,12 @@
             <app-boton-add (botonAddTouch)="onTouchBotonAdd($event)"></app-boton-add>
         }
     }@else{
-        <p>Pagina de resumen</p>
+        @if (arrayGastos.length === 0 && arrayIngresos.length === 0) {
+            <p>No tienes Ingresos ni gastos registrados</p>
+        }@else {
+            <p>Features are coming</p>
+            <app-grafico></app-grafico>
+        }
         <!-- Aqui colocaremos el componente de grafico -->
     }
 </section>

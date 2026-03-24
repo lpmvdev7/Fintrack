@@ -5,10 +5,11 @@ import { ContainerItems } from "./container-items/container-items.component";
 import { Total } from "./total/total.component";
 import { ingresos } from '../../ingresos';
 import { gastos } from '../../gastos';
+import { Grafico } from './grafico/grafico.component';
 
 @Component({
   selector: 'app-section',
-  imports: [BotonAdd, AddItem, ContainerItems, Total],
+  imports: [BotonAdd, AddItem, ContainerItems, Total, Grafico],
   templateUrl: './section.component.html',
   styleUrl: './section.component.css',
 })
